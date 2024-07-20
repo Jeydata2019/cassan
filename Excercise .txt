@@ -1,0 +1,64 @@
+
+Basic Commands 
+
+-cqlsh-
+
+Create a Keyspace:
+
+
+CREATE KEYSPACE IF NOT EXISTS keyspace_name
+WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3};
+This command creates a keyspace named keyspace_name with SimpleStrategy replication and a replication factor of 3. Adjust the replication strategy and factor based on your requirements.
+
+Use a Keyspace:
+
+USE keyspace_name;
+This command switches to the specified keyspace (keyspace_name) for subsequent operations.
+
+Create a Table:
+
+CREATE TABLE IF NOT EXISTS table_name (
+    column1 data_type1,
+    column2 data_type2,
+    PRIMARY KEY (primary_key_column)
+);
+This command creates a table named table_name with specified columns and a primary key. Adjust the column names and data types based on your schema.
+
+Insert Data:
+
+INSERT INTO table_name (column1, column2)
+VALUES (value1, value2);
+This command inserts data into the specified table (table_name). Provide values for the columns based on the table structure.
+
+Select Data:
+
+SELECT * FROM table_name WHERE condition;
+This command retrieves data from the specified table (table_name). You can include a WHERE clause to filter results based on a condition.
+
+Update Data:
+
+UPDATE table_name
+SET column1 = new_value1, column2 = new_value2
+WHERE condition;
+This command updates data in the specified table (table_name). Adjust the SET clause and WHERE clause based on your update criteria.
+
+Delete Data:
+
+DELETE FROM table_name WHERE condition;
+This command deletes data from the specified table (table_name). Include a WHERE clause to specify the deletion criteria.
+
+Describe Table:
+
+DESCRIBE TABLE table_name;
+This command provides information about the structure of the specified table (table_name), including column names, data types, and the primary key.
+
+Drop Keyspace:
+
+DROP KEYSPACE IF EXISTS keyspace_name;
+This command deletes the specified keyspace (keyspace_name) and all the tables it contains.
+
+Drop Table:
+
+DROP TABLE IF EXISTS table_name;
+This command deletes the specified table (table_name). Be cautious as this operation is irreversible.
+

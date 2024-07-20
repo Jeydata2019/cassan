@@ -1,0 +1,21 @@
+Get the required files and commands to submit the job:
+
+su root
+
+cd /etc/yum.repos.d
+
+wget https://raw.githubusercontent.com/ash...
+
+hadoop fs -mkdir /user/maria_dev/cassandra
+
+hadoop fs -copyFromLocal movies.user /user/maria_dev/cassandra/movies.user
+
+wget https://raw.githubusercontent.com/ash...
+
+service cassandra start
+
+export SPARK_MAJOR_VERSION=2
+
+spark-submit --packages com.datastax.spark:spark-cassandra-connector_2.11:2.4.2 cassandraspark.py
+
+In the previous lecture we have seen Installing Cassandra on Hadoop HDP Sandbox where we have installed the Python version 2.7 and setup the repository to install Cassandra service, then we have started the Cassandra service on our Hortonworks HDP Sandbox and created a KEYSPACE which is a Database for Casandra and created one table in it. 
